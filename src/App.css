@@ -1,42 +1,332 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+:root {    
+  --black: #000;
+  --white: #fff;
+  --grey: #ccc;
+  --light-blue: #6aa9fb;
+  --yellow: #fbe86a;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+html {
+  height: 100%;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+body {
+  margin: 0;
+  min-height: 100%;
+  background-color: var(--black);
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--white);
+  min-width: 100vw;;
+}
+
+body {
+  font-size: 1.0582010582010584vw;
+}
+/* Max Font Size */
+@media screen and (min-width:1512px) {
+  body {font-size: 16px;}
+}
+/* Container Max Width */
+.l-container {
+  max-width: 1512px;
+}
+/* links colors inherit from parent element, no text-decoration */
+a {
+  color: inherit;
+  font-size: inherit;
+}
+a, a:hover, a:active, a:visited {
+  cursor: pointer !important;
+}
+button {
+  /* unsets all the defaults values that come with the button */
+  all: unset;
+  cursor: pointer;
+}
+.no-scroll {
+  overflow: hidden;
+}
+/*this prevents horizontal scroll, but allows sticky position */
+.page-wrapper {
+  overflow: clip;
+}
+/*Elements that should no be clickable*/
+.cursor {
+  pointer-events: none;
+}
+@media (pointer: fine){
+  body:hover .cursor {
+    opacity: 1;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+button {
+    display: inline-block;
+    padding: 9px 15px;
+    background-color: #3898EC !important;
+    color: white !important;
+    border: 0;
+    line-height: inherit;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 0;
+}
+.page-wrapper {
+  width: 100%;
+  min-width: 100vw;
+}
+
+.container {
+  width: 100%;
+  max-width: 100em;
+  border-top: 1px solid var(--color--text);
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1em 0 10em;
+  display: flex;
+  position: relative;
+}
+
+.section {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 2em;
+  padding-right: 2em;
+  position: relative;
+}
+
+.l-container-abs {
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  position: absolute;
+  top: 0%;
+  bottom: 0%;
+  left: 0%;
+  right: 0%;
+}
+
+.btn {
+  border: 1px solid var(--swatch--black);
+  color: var(--swatch--black);
+  text-transform: uppercase;
+  border-radius: 50px;
+  padding: .56rem 1.25rem;
+  font-weight: 500;
+  text-decoration: none;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn:hover {
+  color: var(--swatch--white);
+  -webkit-text-stroke-width: 0px;
+  transform: none;
+}
+
+.l-container {
+  position: relative;
+  display: flex;
+  width: 100%;
+  max-width: 100em;
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 1em;
+  padding-right: 0em;
+  padding-bottom: 10em;
+  padding-left: 0em;
+  justify-content: space-between;
+  align-items: flex-start;  
+}
+
+.l-container:small {
+  max-width: 560px;
+  padding-top: 0.5rem;
+  padding-bottom: 4rem;
+  grid-row-gap: 24px;
+}
+
+.l-container:tiny {
+  flex-direction: column;
+}
+
+.l-container.is--flex-vcc {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.is--min-100vh {
+  min-height: 100vh;
+}
+
+.main-game {
+  display: flex;
+  margin-top: 4rem;
+  margin-bottom: 3rem;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+
+.main-game__players-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+  padding-top: 20px;
+  grid-column-gap: 16px;
+}
+
+.main-game__player {
+  display: flex;
+  padding-top: 16px;
+  padding-right: 16px;
+  padding-bottom: 16px;
+  padding-left: 16px;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  grid-row-gap: 10px;
+  border-top-style: solid;
+  border-top-width: 1.5px;
+  border-top-color: black;
+  border-right-style: solid;
+  border-right-width: 1.5px;
+  border-right-color: black;
+  border-bottom-style: solid;
+  border-bottom-width: 1.5px;
+  border-bottom-color: black;
+  border-left-style: solid;
+  border-left-width: 1.5px;
+  border-left-color: black;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.main-game__player-score {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  margin-top:10px;
+}
+
+.main-game__player-name {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.main-game__options {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-column-gap: 10px;
+  margin-top: 16px;
+}
+
+.main-game__btn-option {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  grid-row-gap: 10px;
+  font-weight: 600;
+}
+
+.main-game__btn-img {
+  width: 75px;
+  height: 75px;
+}
+
+.main-game__visuals {
+  display: flex;
+  flex-direction: column;
+}
+.main-game__emojis-wrp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-column-gap: 30px;
+}
+.main-game__emoji-wrp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 200px;
+  height: 200px;
+  padding-top: 16px;
+  padding-right: 16px;
+  padding-bottom: 16px;
+  padding-left: 16px;
+  background-color: grey;
+}
+
+.main-game__emoji {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.main-game__message {
+  display: flex;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  font-style: italic;
+}
+@media screen and (max-width: 991px) {
+  body {
+    font-size: 1.5vw;
+  }
+  .btn {
+    font-size: .75rem;
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+@media screen and (max-width: 767px) {
+  h1 {
+    font-size: 11rem;
+  }
+
+  .page-wrapper {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .l-container {
+    max-width: 560px;
+    grid-row-gap: 24px;
+    padding-top: .5rem;
+    padding-bottom: 4rem;
+  }
+
+  .section {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .btn {
+    font-size: .75rem;
   }
 }
 
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+@media screen and (max-width: 479px) {
+  .l-container {
+    flex-direction: column;
+  }
+  .btn {
+    font-size: .8rem;
+  }
 }
